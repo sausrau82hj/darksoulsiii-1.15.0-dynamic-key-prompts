@@ -1,5 +1,7 @@
 # Dynamic Key Prompts 0.1.4 — Dark Souls III 1.15.0
 
+**English** · [中文](#中文)
+
 Shows the **keyboard / mouse key you actually bound** instead of the gamepad button in prompts.
 
 An unofficial port of Dynamic Key Prompts 0.1.4 to the 1.15.0 executable: upstream version 0.1.4, rebuilt for game version 1.15.0. **1.15.0 only.**
@@ -42,12 +44,50 @@ Two changes to 0.1.4: the loader detects the 1.15.0 executable and skips the ups
 
 Dynamic Key Prompts 0.1.4 by HappyEntity — MIT, see [LICENSE](LICENSE). MinHook and the Hacker Disassembler Engine are BSD 2-Clause — see [LICENSE-MinHook.txt](LICENSE-MinHook.txt). This port is unofficial and not affiliated with the author.
 
+---
+
 ## 中文
 
-把提示里的手柄按键换成你实际绑定的键鼠按键。这是 Dynamic Key Prompts 0.1.4 针对《黑暗之魂3》1.15.0 重新编译的版本，**仅支持 1.15.0**。
+[English](#dynamic-key-prompts-014--dark-souls-iii-1150) · **中文**
 
-安装：把 `xinput1_3.dll` 和 `DynamicKeyPrompts` 文件夹放进 `...\DARK SOULS III\Game\`（与 `DarkSoulsIII.exe` 同级），从 Steam 正常启动即可。卸载就是删掉这两样。若别的 mod 已占用 `xinput1_3.dll`，两者不能共存。
+把提示里的手柄按键换成**你实际绑定的键鼠按键**。
 
-设置看 `DynamicKeyPrompts\DynamicKeyPrompts.ini`：`Style=text` 显示 `[E]` 这样的文字，`icons` 显示按键图标；`Labels` 控制同时有键鼠绑定时显示哪一个；`Color` 是文字颜色。
+这是 Dynamic Key Prompts 0.1.4 针对游戏版本 1.15.0 重新编译的非官方移植版：上游版本 0.1.4，按 1.15.0 的可执行文件重新编译。**仅支持 1.15.0。**
 
-代码与美术版权归原作者 HappyEntity（MIT）。
+本仓库提供可直接安装的成品。
+
+## 安装
+
+把下面两样放到 `DarkSoulsIII.exe` 旁边（`...\DARK SOULS III\Game\`），然后从 Steam 正常启动游戏：
+
+```
+Game\xinput1_3.dll
+Game\DynamicKeyPrompts\DynamicKeyPrompts.dll
+Game\DynamicKeyPrompts\DynamicKeyPrompts.ini
+```
+
+**卸载：** 删掉 `xinput1_3.dll` 和 `DynamicKeyPrompts` 文件夹。
+若 `xinput1_3.dll` 已被别的 mod 占用，两者无法共存。
+
+## 设置
+
+`DynamicKeyPrompts\DynamicKeyPrompts.ini`：
+
+| 项 | 取值 |
+|---|---|
+| `Enabled` | `0` = mod 完全不生效 |
+| `Style` | `text` = 用文字显示键名，如 `[E]` · `icons` = 显示按键图标（缓存写在 `DynamicKeyPrompts\cache\ds3`） |
+| `IconTheme` | 图标外观：`dark` / `minimal` / `silver` |
+| `Labels` | 某个操作同时有按键和鼠标键时显示哪个：`auto` / `keyboard` / `mouse` / `both` |
+| `Format` | 仅文字模式；`{0}` 是键名，例如 `[{0}]` → `[E]` |
+| `Separator` | 同一摇杆 / 十字键提示里多个键之间的分隔符 |
+| `Color` | 键名颜色 `RRGGBB`，留空 = 跟随正常文字颜色 |
+| `Diagnostics` | `1` = `DynamicKeyPrompts.log` 记录更详细的日志 |
+
+## 关于此移植
+
+相对 0.1.4 改了两处：加载器会识别 1.15.0 的可执行文件，跳过上游的入口点屏蔽（上游用的是 1.15.2 的地址，在 1.15.0 上会直接崩溃）；键帽图集改到常驻加载的 `menu/01_common.tpf.dcx`，所以居中的提示（「在篝火旁休息」「交谈」）也能显示键帽。
+
+## 致谢
+
+Dynamic Key Prompts 0.1.4 作者 HappyEntity — MIT 许可，见 [LICENSE](LICENSE)。MinHook 与 Hacker Disassembler Engine 为 BSD 2-Clause 许可 — 见 [LICENSE-MinHook.txt](LICENSE-MinHook.txt)。本移植为非官方版本，与原作者无关联。
