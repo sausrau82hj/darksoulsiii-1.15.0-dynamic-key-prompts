@@ -38,7 +38,8 @@ If another mod already occupies `xinput1_3.dll`, the two cannot be installed tog
 
 ## About this port
 
-Two changes to 0.1.4: the loader detects the 1.15.0 executable and skips the upstream entry-point blocking (it used 1.15.2 addresses and crashed 1.15.0); and the keycap atlas moved to the always-loaded `menu/01_common.tpf.dcx`, so the centred prompt ("Rest at bonfire", "Talk") shows the keycap too.
+1.Two changes to 0.1.4: the loader detects the 1.15.0 executable and skips the upstream entry-point blocking (it used 1.15.2 addresses and crashed 1.15.0); and the keycap atlas moved to the always-loaded `menu/01_common.tpf.dcx`, so the centred prompt ("Rest at bonfire", "Talk") shows the keycap too.
+2.github.com/djlastnight/KeyboardSplitterXbox/releasesYou might need to use a virtual controller to set up some of the buttons.
 
 ## Credits
 
@@ -86,7 +87,10 @@ Game\DynamicKeyPrompts\DynamicKeyPrompts.ini
 
 ## 关于此移植
 
-相对 0.1.4 改了两处：加载器会识别 1.15.0 的可执行文件，跳过上游的入口点屏蔽（上游用的是 1.15.2 的地址，在 1.15.0 上会直接崩溃）；键帽图集改到常驻加载的 `menu/01_common.tpf.dcx`，所以居中的提示（「在篝火旁休息」「交谈」）也能显示键帽。
+1.相对 0.1.4 改了两处：加载器会识别 1.15.0 的可执行文件，跳过上游的入口点屏蔽（上游用的是 1.15.2 的地址，在 1.15.0 上会直接崩溃）；键帽图集改到常驻加载的 `menu/01_common.tpf.dcx`，所以居中的提示（「在篝火旁休息」「交谈」）也能显示键帽。
+2.github.com/djlastnight/KeyboardSplitterXbox/releases 可能需要借助虚拟手柄设置一些按键
+
+
 
 ## 致谢
 
