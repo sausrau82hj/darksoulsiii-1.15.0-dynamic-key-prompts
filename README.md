@@ -39,6 +39,7 @@ If another mod already occupies `xinput1_3.dll`, the two cannot be installed tog
 ## About this port
 
 1.Two changes to 0.1.4: the loader detects the 1.15.0 executable and skips the upstream entry-point blocking (it used 1.15.2 addresses and crashed 1.15.0).
+
 2.github.com/djlastnight/KeyboardSplitterXbox/releasesYou might need to use a virtual controller to set up some of the buttons, or some key prompts can not appear.
 
 ## Credits
@@ -88,6 +89,7 @@ Game\DynamicKeyPrompts\DynamicKeyPrompts.ini
 ## 关于此移植
 
 1.相对 0.1.4 改了两处：加载器会识别 1.15.0 的可执行文件，跳过上游的入口点屏蔽（上游用的是 1.15.2 的地址，在 1.15.0 上会直接崩溃） 。
+
 2.github.com/djlastnight/KeyboardSplitterXbox/releases 可能需要借助虚拟手柄设置一些按键，否则一些按键提示词不会显示。
 
 
