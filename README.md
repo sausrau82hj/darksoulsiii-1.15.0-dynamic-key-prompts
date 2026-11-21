@@ -56,4 +56,4 @@ Setting up some of the buttons may need a virtual controller, otherwise those ke
 
 ## Credits
 
-Dynamic Key Prompts 0.1.4 by HappyEntity — MIT, see [LICENSE](LICENSE). MinHook and the Hacker Disassembler Engine are BSD 2-Clause — see [LICENSE-MinHook.txt](LICENSE-MinHook.txt). This port is unofficial and not affiliated with the author.
+Dynamic Key Prompts 0.1.4 by HappyEntity — MIT, see [LICENSE](LICENSE). The loader includes dearxan, MinHook and the Hacker Disassembler Engine — licenses in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and [LICENSE-MinHook.txt](LICENSE-MinHook.txt). This port is unofficial and not affiliated with the author.
