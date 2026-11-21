@@ -2,9 +2,7 @@
 
 Shows the **keyboard / mouse key you actually bound** instead of the gamepad button in prompts.
 
-An unofficial port of Dynamic Key Prompts 0.1.4 to the 1.15.0 executable: upstream version 0.1.4, rebuilt for game version 1.15.0. **1.15.0 only.**
-
-This repository holds the install-ready build.
+An unofficial port of Dynamic Key Prompts 0.1.4 to the 1.15.0 executable. **1.15.0 only.** This repository holds the install-ready build and the source of the files that differ from upstream.
 
 ## Install
 
@@ -34,11 +32,27 @@ If another mod already occupies `xinput1_3.dll`, the two cannot be installed tog
 | `Color` | key label colour `RRGGBB`, empty = normal text colour |
 | `Diagnostics` | `1` = verbose diagnostics |
 
-## About this port
+## Source
 
-1.Two changes to 0.1.4: the loader detects the 1.15.0 executable and skips the upstream entry-point blocking (it used 1.15.2 addresses and crashed 1.15.0).
+Upstream is [Dynamic Key Prompts](https://github.com/HappyEntity/Souls-Dynamic-Key-Prompts) at tag `ds3-v0.1.4`, MIT. This port replaces three of its files:
 
-2.github.com/djlastnight/KeyboardSplitterXbox/releasesYou might need to use a virtual controller to set up some of the buttons, or some key prompts can not appear.
+- `src/Games/Ds3/Rva.cs` — the address table relocated to the 1.15.0 executable; the 1.15.2 values are kept as comments.
+- `src/Games/Ds3/KeyIcons.cs` — icon carrier `menu/01_common.tpf.dcx`, which is the texture pack 1.15.0 loads (1.15.2 uses `05_dummy`).
+- `src/Loader/dllmain.cpp` — dearxan's entry-point blocking uses 1.15.2 addresses and crashes 1.15.0, so the loader detects the 1.15.0 executable and starts without dearxan.
+
+Build:
+
+```
+git clone --branch ds3-v0.1.4 https://github.com/HappyEntity/Souls-Dynamic-Key-Prompts
+# copy the three files above over the same paths, then:
+pwsh .\build.ps1 -Game ds3
+```
+
+Requires Visual Studio 2026 with the C++ desktop workload and the .NET 10 SDK; `build.ps1` downloads dearxan on first run. Output goes to `out\ds3`. Built from these three files, both DLLs match the ones in this repository (`.text`, `.data`, `.pdata`, `.reloc` identical).
+
+## Notes
+
+Setting up some of the buttons may need a virtual controller, otherwise those key prompts cannot appear — [KeyboardSplitterXbox](https://github.com/djlastnight/KeyboardSplitterXbox/releases) is one way.
 
 ## Credits
 
