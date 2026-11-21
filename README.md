@@ -1,4 +1,4 @@
-# Dynamic Key Prompts 0.1.4 — Dark Souls III 1.15.0
+# Dynamic Key Prompts 0.1.4 — *Dark Souls III 1.15.0*
 
 Shows the **keyboard / mouse key you actually bound** instead of the gamepad button in prompts.
 
